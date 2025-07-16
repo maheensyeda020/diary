@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Maha's Digital Diary</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>maha/maheen’s digital diary 📔🐙</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
     body {
-      background-color: #000814;
-      color: #5dd3ff;
+      margin: 0;
+      padding: 0;
       font-family: 'Press Start 2P', monospace;
+      background: url('https://images.unsplash.com/photo-1604079628041-d7c9dbe0e3f8?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
       text-align: center;
-      padding: 5vh 2rem;
+      padding: 80px 20px;
     }
+
     h1 {
-      font-size: 1rem;
-      margin-top: 2rem;
+      font-size: 20px;
+      text-shadow: 0 0 10px #00ffee, 0 0 20px #ff00ff;
+      margin-bottom: 30px;
     }
-    #countdown {
-      font-size: 1.2rem;
-      color: #ffd700;
-      margin-bottom: 2rem;
+
+    .icons {
+      font-size: 24px;
+      margin-top: 20px;
     }
+
+    .cat {
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      font-size: 36px;
+      animation: floaty 4s ease-in-out infinite;
+    }
+
+    @keyframes floaty {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
     a {
-      display: block;
-      margin: 2rem auto;
-      width: 300px;
-      padding: 1rem;
-      border: 2px solid #5dd3ff;
+      color: #00ffee;
       text-decoration: none;
-      color: #5dd3ff;
-      transition: 0.2s;
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 16px;
+      transition: all 0.3s ease;
     }
+
     a:hover {
-      background: #5dd3ff;
-      color: #000814;
+      text-shadow: 0 0 5px #fff, 0 0 15px #ff00ff;
+      transform: scale(1.05);
     }
-    img {
-      width: 130px;
-      margin-bottom: 2rem;
-    }
+
   </style>
 </head>
 <body>
+  <h1>maha/maheen’s digital diary 📔🐙</h1>
 
-  <img src="https://media.tenor.com/6y3Kk5TZv9AAAAAi/cat-typing-fast.gif" alt="Blue cat">
-  
-  <div id="countdown">Loading...</div>
-  <h1>hello loser,<br>welcome to Maha/Maheen's digital diary 📘</h1>
+  <div class="icons">
+    💻 🎮 📀 👾 🎆 🎇 🌌 🪐
+  </div>
 
-  <a href="nolonger.html">"we're no longer friends / i'm dead ig?"</a>
-  <a href="happy.html">"happy birthday"</a>
+  <a href="happy.html">→ read birthday letter</a><br>
+  <a href="nolonger.html">→ view memory page</a>
 
-  <script>
-    let seconds = 5;
-    const countdown = document.getElementById('countdown');
-    const timer = setInterval(() => {
-      countdown.innerText = `self-destructing in ${seconds}...`;
-      seconds--;
-      if (seconds < 0) {
-        clearInterval(timer);
-        countdown.innerText = "🧠 just kidding.";
-      }
-    }, 1000);
-  </script>
-
+  <div class="cat">🐈‍⬛</div>
 </body>
 </html>

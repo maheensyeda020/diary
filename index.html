@@ -1,74 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>maha/maheen’s digital diary 📔🐙</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Press Start 2P', monospace;
-      background: url('https://images.unsplash.com/photo-1604079628041-d7c9dbe0e3f8?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+      background-color: #0d1b2a;
+      color: #ffffff;
+      font-family: 'Courier New', monospace;
       text-align: center;
-      padding: 80px 20px;
+      padding: 60px 20px;
     }
 
     h1 {
-      font-size: 20px;
-      text-shadow: 0 0 10px #00ffee, 0 0 20px #ff00ff;
-      margin-bottom: 30px;
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #f5f5f5;
     }
 
     .icons {
       font-size: 24px;
-      margin-top: 20px;
+      margin-bottom: 30px;
     }
 
-    .cat {
-      position: fixed;
-      bottom: 15px;
-      left: 15px;
-      font-size: 36px;
-      animation: floaty 4s ease-in-out infinite;
-    }
-
-    @keyframes floaty {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
+    #countdown {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #a8dadc;
     }
 
     a {
-      color: #00ffee;
+      color: #f1faee;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 40px;
-      font-size: 16px;
-      transition: all 0.3s ease;
+      display: block;
+      margin: 20px 0;
+      font-size: 18px;
+      transition: color 0.3s ease;
     }
 
     a:hover {
-      text-shadow: 0 0 5px #fff, 0 0 15px #ff00ff;
-      transform: scale(1.05);
+      color: #ffccf9;
     }
 
+    .cat {
+      font-size: 36px;
+      margin-top: 40px;
+      animation: blink 3s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
   </style>
 </head>
 <body>
+
   <h1>maha/maheen’s digital diary 📔🐙</h1>
 
-  <div class="icons">
-    💻 🎮 📀 👾 🎆 🎇 🌌 🪐
-  </div>
+  <div class="icons">💻 🎮 📀 👾 🎆 🎇 🌌 🪐</div>
 
-  <a href="happy.html">→ read birthday letter</a><br>
+  <div id="countdown"></div>
+
+  <a href="happy.html">→ read birthday letter</a>
   <a href="nolonger.html">→ view memory page</a>
 
   <div class="cat">🐈‍⬛</div>
+
+  <script>
+    // Countdown timer setup
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("July 28, 2025 00:00:00").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdown.innerHTML = "🎉 it's hamza's birthday!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s until hamza turns 18 🎂`;
+    };
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
 </body>
 </html>

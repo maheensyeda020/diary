@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maha's Digital Diary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      background-color: #000814;
+      color: #5dd3ff;
+      font-family: 'Press Start 2P', monospace;
+      text-align: center;
+      padding: 5vh 2rem;
+    }
+    h1 {
+      font-size: 1rem;
+      margin-top: 2rem;
+    }
+    #countdown {
+      font-size: 1.2rem;
+      color: #ffd700;
+      margin-bottom: 2rem;
+    }
+    a {
+      display: block;
+      margin: 2rem auto;
+      width: 300px;
+      padding: 1rem;
+      border: 2px solid #5dd3ff;
+      text-decoration: none;
+      color: #5dd3ff;
+      transition: 0.2s;
+    }
+    a:hover {
+      background: #5dd3ff;
+      color: #000814;
+    }
+    img {
+      width: 130px;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://media.tenor.com/6y3Kk5TZv9AAAAAi/cat-typing-fast.gif" alt="Blue cat">
+  
+  <div id="countdown">Loading...</div>
+  <h1>hello loser,<br>welcome to maha's digital diary 😤📘</h1>
+
+  <a href="nolonger.html">"we're no longer friends / i'm dead ig?"</a>
+  <a href="happy.html">"happy birthday"</a>
+
+  <script>
+    let seconds = 5;
+    const countdown = document.getElementById('countdown');
+    const timer = setInterval(() => {
+      countdown.innerText = `self-destructing in ${seconds}...`;
+      seconds--;
+      if (seconds < 0) {
+        clearInterval(timer);
+        countdown.innerText = "🧠 just kidding.";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>

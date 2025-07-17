@@ -4,29 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>maha/maheen’s digital diary 📔🐙</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=VT323&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #0d1b2a;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #ffffff;
-      font-family: 'Courier New', monospace;
+      font-family: 'VT323', monospace;
       text-align: center;
       padding: 60px 20px;
+      overflow: hidden;
     }
 
     h1 {
-      font-size: 26px;
-      margin-bottom: 20px;
-      color: #f5f5f5;
-    }
-
-    .icons {
-      font-size: 24px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 36px;
       margin-bottom: 30px;
+      color: #f5f5f5;
+      text-shadow: 0 0 20px #0ff;
     }
 
     #countdown {
-      font-size: 20px;
-      margin-top: 10px;
+      font-size: 22px;
+      margin: 20px 0;
       color: #a8dadc;
     }
 
@@ -34,8 +34,8 @@
       color: #f1faee;
       text-decoration: none;
       display: block;
-      margin: 20px 0;
-      font-size: 18px;
+      margin: 15px 0;
+      font-size: 20px;
       transition: color 0.3s ease;
     }
 
@@ -53,23 +53,46 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0.6; }
     }
+
+    /* floating emojis */
+    .emoji {
+      position: absolute;
+      font-size: 28px;
+      animation: floaty 10s infinite ease-in-out;
+      opacity: 0.7;
+    }
+
+    @keyframes floaty {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-30px); }
+      100% { transform: translateY(0px); }
+    }
+
   </style>
 </head>
 <body>
 
   <h1>maha/maheen’s digital diary 📔🐙</h1>
 
-  <div class="icons">💻 🎮 📀 👾 🎆 🎇 🌌 🪐</div>
-
   <div id="countdown"></div>
 
   <a href="happy.html">→ read birthday letter</a>
-  <a href="nolonger.html">→ view memory page</a>
+  <a href="nolonger.html">→ view memory page / diary entries</a>
+  <a href="idk.html">→ idk</a>
 
   <div class="cat">🐈‍⬛</div>
 
+  <!-- floating emoji chaos -->
+  <div class="emoji" style="top: 10%; left: 10%;">🎮</div>
+  <div class="emoji" style="top: 20%; left: 70%;">📀</div>
+  <div class="emoji" style="top: 50%; left: 30%;">🏀</div>
+  <div class="emoji" style="top: 60%; left: 80%;">👾</div>
+  <div class="emoji" style="top: 75%; left: 20%;">🎆</div>
+  <div class="emoji" style="top: 35%; left: 50%;">🪐</div>
+  <div class="emoji" style="top: 85%; left: 65%;">🎇</div>
+  <div class="emoji" style="top: 15%; left: 85%;">💻</div>
+
   <script>
-    // Countdown timer setup
     const countdown = document.getElementById("countdown");
     const targetDate = new Date("July 28, 2025 00:00:00").getTime();
 
